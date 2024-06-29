@@ -1,0 +1,32 @@
+A queue is a linear data structure that contains elements in an ordered sequence.
+It is an abstract data type, pretty similar to a stack data structure and also different fundamentally.
+We insert data at one end of the queue and remove data from the other end.
+
+Here are a few more real-life applications of queues:
+
+>Luggage checking machine
+>Vehicles on toll tax bridge
+>One way exits
+>Patients waiting outside the doctor’s clinic
+>Phone answering systems
+>Cashier line in a store
+
+*** Types of Queue ***
+
+There are four different types of queue that are listed as follows -
+
+>Simple Queue or Linear Queue
+>Circular Queue
+>Priority Queue
+>Double Ended Queue (or Deque)
+
+Simple Queue or Linear Queue
+
+In Linear Queue, an insertion takes place from one end while the deletion occurs from another end.
+The end at which the insertion takes place is known as the rear end, and the end at which the deletion
+takes place is known as front end. It strictly follows the FIFO rule.
+
+The major drawback of using a linear Queue is that insertion is done only from the rear end.
+If the first three elements are deleted from the Queue, we cannot insert more elements even 
+though the space is available in a Linear Queue. In this case, the linear Queue shows the overflow
+condition as the rear is pointing to the last element of the Queue.
