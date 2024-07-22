@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class T2_Array_Implementaion_queue {
 
@@ -8,37 +9,55 @@ public class T2_Array_Implementaion_queue {
         int size = 0;
 
         public void Enqueue(int x) {
-            if (rear == arr.length - 1) {
+            if (size ==arr.length) {
                 System.out.println("queue is full");
             } else {
                 arr[rear] = x;
-                rear++;
+                rear= (rear+1)%arr.length;
                 size++;
             }
         }
 
         public int Dequeue() {
-            if (rear == front) {
+            if (size==0) {
                 return -1;
             }
-            front++;
+            int value = arr[front];
+            front=(front+1)%arr.length;
             size--;
-            return arr[front - 1];
+            return value;
 
         }
 
         public int Peek() {
-            return arr[front];
+            if (size == 0) {
+                System.out.println("Queue is empty");
+                return -1; // Or some other error value
+            } else {
+                return arr[front];
+            }
         }
 
         public int Size() {
+          
             return size;
+            
         }
 
         public void display() {
-            for (int i = front; i < rear; i++) {
-                System.out.println(arr[i]);
+            if (size == 0) {
+                System.out.println("Queue is empty");
+                return;
             }
+        
+            int i = front;
+            int count = 0;
+            while (count < size) {
+                System.out.print(arr[i] + " ");
+                i = (i + 1) % arr.length; // Wrap around
+                count++;
+            }
+            System.out.println();
         }
 
     }
@@ -49,10 +68,26 @@ public class T2_Array_Implementaion_queue {
         queue.Enqueue(1);
         queue.Enqueue(12);
         queue.Enqueue(123);
+        queue.Enqueue(231);
+        queue.Enqueue(23);
+
         queue.display();
 
         //it will remove the first element from the queue
         queue.Dequeue();
+        queue.Dequeue();
+        queue.Dequeue();
+        queue.Dequeue();
+        queue.Dequeue();
+        queue.display();
+
+       //this will create issue so we have to use the empty space
+       
+        queue.Enqueue(34);
+        queue.Enqueue(34);
+        queue.Enqueue(34);
+        queue.Enqueue(34);
+        queue.Enqueue(3);
         queue.display();
         
         System.out.println("the size of queue is "+queue.size);

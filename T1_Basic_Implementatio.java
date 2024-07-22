@@ -18,7 +18,7 @@ public class T1_Basic_Implementatio {
     System.out.println(q);
 
 
-    q.poll(); // poll method is used to remove the element from the queue
+    //q.poll(); // poll method is used to remove the element from the queue
     System.out.println(q);
     System.out.println(q.peek());// the peek method is use to print the first element
 
